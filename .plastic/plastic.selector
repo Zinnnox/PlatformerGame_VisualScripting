@@ -1,0 +1,4 @@
+repository "CoachCristians_2DPlatformer_VScripting@durham_unity@cloud"
+  path "/"
+    br "/main"
+    co "/main"

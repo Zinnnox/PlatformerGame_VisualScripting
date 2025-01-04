@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerScriptTest : MonoBehaviour
+{
+    [Header("Movement Settings")]
+    
+
+    [Header("Ground Check")]
+   
+
+   
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        // Handle horizontal movement.
+        
+        // Check if the player is grounded.
+        
+        // Handle jumping.
+        if (Input.GetButtonDown("Jump"))
+        {
+
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a visual representation of the ground check radius in the editor.
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere();
+        }
+    }
+}
