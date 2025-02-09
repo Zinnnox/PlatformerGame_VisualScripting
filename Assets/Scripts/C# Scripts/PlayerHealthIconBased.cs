@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHearts < 0)
         {
             currentHearts = 0;
+            EventBus.Trigger("OnPlayerDie");
         }
         Debug.Log("Player took damage! Hearts left: " + currentHearts);
     }

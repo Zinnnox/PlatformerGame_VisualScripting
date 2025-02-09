@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyMelee : MonoBehaviour
 {
     public EnemyDetection playerDetector;
+    public PlayerHealth playerHealth;
     public float attackCooldown = 2f;
     private float attackTimer;
 
@@ -15,6 +16,7 @@ public class EnemyMelee : MonoBehaviour
         {
             // Perform the melee attack
             Debug.Log("Enemy melees the player!");
+            playerHealth.TakeDamage(1);
             // Reset timer
             attackTimer = attackCooldown;
         }

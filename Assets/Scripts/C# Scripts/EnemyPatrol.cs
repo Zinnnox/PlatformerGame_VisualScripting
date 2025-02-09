@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public LayerMask groundLayer;     // Which layer is considered ground
     public float speed = 2f;          // Speed of the enemy
     public float patrolDistance = 5f; // Distance to patrol before flipping
-    
+    public Animator enemyAnimator;    // Reference to the enemy's animator
     private bool movingRight = true;
     private Rigidbody2D rb;
     private Vector2 startPosition; // Initial position of the enemy
@@ -22,6 +21,8 @@ public class EnemyPatrol : MonoBehaviour
         float moveDirection = movingRight ? 1f : -1f;
         rb.velocity = new Vector2(moveDirection * speed, rb.velocity.y);
     
+        enemyAnimator.SetBool("isMoving", true);
+
         // Check if the enemy has reached the patrol distance
         if (movingRight && rb.position.x >= startPosition.x + patrolDistance)
         {
